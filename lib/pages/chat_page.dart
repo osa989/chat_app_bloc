@@ -1,7 +1,6 @@
 import 'package:chatt_app/constants.dart';
 import 'package:chatt_app/cubits/chat_cubit/chat_cubit.dart';
-import 'package:chatt_app/models/message.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -3,7 +3,6 @@ import 'package:chatt_app/cubits/chat_cubit/chat_cubit.dart';
 import 'package:chatt_app/cubits/login_cubit/login_cubit.dart';
 import 'package:chatt_app/pages/chat_page.dart';
 import 'package:chatt_app/pages/register_page.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
@@ -12,8 +11,14 @@ import '../helper/show_snack_bar.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_text_field.dart';
 
-class LoginPage extends StatelessWidget {
+class LoginPage extends StatefulWidget {
   static String id = 'LoginPage';
+
+  @override
+  State<LoginPage> createState() => _LoginPageState();
+}
+
+class _LoginPageState extends State<LoginPage> {
   String? email, password;
 
   bool isLoading = false;
