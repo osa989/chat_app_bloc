@@ -7,8 +7,7 @@ part 'auth_state.dart';
 class AuthCubit extends Cubit<AuthState> {
   AuthCubit() : super(AuthInitial());
 
-
-    Future<void> registerUser(
+  Future<void> registerUser(
       {required String email, required String password}) async {
     emit(RegisterLoading());
     try {
@@ -26,7 +25,7 @@ class AuthCubit extends Cubit<AuthState> {
     }
   }
 
-    Future<void> loginUser(
+  Future<void> loginUser(
       {required String email, required String password}) async {
     emit(LoginLoading());
 
@@ -43,5 +42,12 @@ class AuthCubit extends Cubit<AuthState> {
     } catch (e) {
       emit(LoginFailure(errMessage: "something went wrong"));
     }
+  }
+
+  @override
+  void onChange(Change<AuthState> change) {
+    // TODO: implement onChange
+    super.onChange(change);
+    print(change);
   }
 }
